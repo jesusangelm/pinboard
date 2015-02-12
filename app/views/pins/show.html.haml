@@ -1,0 +1,7 @@
+%h1= @pin.title
+%p= @pin.description
+
+= link_to "Listado de pins", root_path
+= link_to "Editar", edit_pin_path
+= link_to "Borrar", pin_path, method: :delete, data: { confirm: "Seguro?" }
+
