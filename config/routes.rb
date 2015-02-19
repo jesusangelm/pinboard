@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: "pins#index"
+  root to: "categories#index"
+  resources :categories, only: [ :index, :show ]
 end

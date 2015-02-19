@@ -1,0 +1,15 @@
+#pins.transitions-enabled
+  - @categories.each do |category|
+    .box.panel.panel-default
+      - if category.pins.empty?
+        = image_tag "empty_gallery.png"
+      -else
+        = link_to (image_tag category.pins.last.image.url), category
+      .panel-body
+        %h2= link_to category.name, category
+        %p.user
+          Descripcion:
+          = category.description
+          %br/
+          Imagenes:
+          = category.pins.count
