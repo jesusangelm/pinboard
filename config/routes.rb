@@ -8,5 +8,11 @@ Rails.application.routes.draw do
   end
 
   root to: "categories#index"
-  resources :categories, only: [ :index, :show ]
+  resources :categories, only: [ :index, :show ] do
+    resources :pins do
+      member do
+        put "like", to: "pins#upvote"
+      end
+    end
+  end
 end
